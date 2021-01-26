@@ -1,0 +1,103 @@
+.frame {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 2px;
+	box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	background: #e1eec3;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #d68384, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #e08384, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+
+	color: #fff;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.center {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 100px;
+	left: 100px;
+	perspective: 1000px;
+}
+.cube {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	transform-style: preserve-3d;
+	transform: translateZ(-100px) rotateX(70deg) rotateZ(-45deg);
+	transition: all 4s ease-in-out;
+	cursor: pointer;
+	animation: rotateCube 5s linear infinite;
+}
+.cube:hover {
+	transform: translateZ(-100px) rotateX(-120deg) rotateZ(135deg);
+}
+.cube:hover .front {
+	transform: rotateY(180deg) translateZ(150px);
+}
+.cube:hover .back {
+	transform: rotateX(0deg) translateZ(150px);
+}
+.cube:hover .right {
+	transform: rotateY(-90deg) translateZ(150px);
+}
+.cube:hover .left {
+	transform: rotateY(90deg) translateZ(150px);
+}
+.cube:hover .top {
+	transform: rotateX(-90deg) translateZ(150px);
+}
+.cube:hover .bottom {
+	transform: rotateX(90deg) translateZ(150px);
+}
+.cube .side {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+}
+.cube .front {
+	transform: rotateY(0deg) translateZ(100px);
+	transition: all 1s ease-in-out;
+	background: #d4d2ac;
+}
+.cube .back {
+	transform: rotateX(180deg) translateZ(100px);
+	transition: all 1s ease-in-out;
+	background: #fafabf;
+}
+.cube .right {
+	transform: rotateY(90deg) translateZ(100px);
+	transition: all 1s ease-in-out;
+	background: #dddccc;
+}
+.cube .left {
+	transform: rotateY(-90deg) translateZ(100px);
+	transition: all 1s ease-in-out;
+	background: #ece8af;
+}
+.cube .top {
+	transform: rotateX(90deg) translateZ(100px);
+	transition: all 1s ease-in-out;
+	background: #c5c296;
+}
+.cube .bottom {
+	transform: rotateX(-90deg) translateZ(100px);
+	transition: all 1s ease-in-out;
+	background: #f8f4c0;
+}
+@keyframes rotateCube {
+	0% {
+		transform: translateZ(-100px) rotateX(70deg) rotateZ(-45deg);
+ }
+	100% {
+		transform: translateZ(-100px) rotateX(70deg) rotateZ(315deg);
+ }
+}
